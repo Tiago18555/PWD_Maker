@@ -1,10 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View, StatusBar } from 'react-native';
+import Home from '../PWD_Maker/src/components/Home'
 
 export default function App() {
   return (
     <View>
+      <StatusBar />
       <Home />
     </View>
   );
