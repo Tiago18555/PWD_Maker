@@ -8,8 +8,9 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-native-community/clipboard": "^1.5.1",
     "expo": "~42.0.1",
-    "expo-cli": "^4.12.1",
+    "expo-cli": "^4.12.7",
     "expo-crypto": "^9.2.0",
     "expo-status-bar": "~1.0.4",
     "nord": "^0.2.1",
@@ -18,7 +19,10 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
     "react-native-btr": "^2.1.2",
     "react-native-crypto": "^2.2.0",
-    "react-native-web": "~0.13.12",
+    "react-native-paper": "^4.9.2",
+    "react-native-web": "^0.17.5",
+    "react-redux": "^7.2.5",
+    "redux": "^4.1.1",
     "utf8": "^3.0.0"
   },
   "devDependencies": {

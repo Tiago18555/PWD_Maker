@@ -1,46 +1,41 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
-import ButtonStyled from '../ButtonStyled';
-import { Ionicons } from '@expo/vector-icons';
+import React from 'react'
+import { StyleSheet, View, Text } from 'react-native'
+import { useSelector } from 'react-redux'
+
+import TrimContainer from '../TrimContainer'
 
 export default function OutputContainer() {
+    const result = useSelector(state => state.data.output)
+
     return (
         <>
             <View style={styles.container}>
-
-                <Input 
-                    placeholder= "SAÍDA"
-                    isMultiline= {true}
-                    styles={{width: 500}}
-                />
-
+                <View>
+                    <Text 
+                        style={styles.result}
+                        selectable={true}
+                        numberOfLines={0}
+                        ellipsizeMode='clip'
+                        //onLongPress={() => Clipboard.setString(result)}
+                    >
+                        {result}
+                    </Text>
+                </View>
+                <View>
+                    <TrimContainer />
+                </View>
             </View>
         </>
-    )
-}
-
-export function Input( { placeholder, isMultiline } ) {
-    const [text, setText] = useState('');
-    
-    return(
-        <TextInput
-            placeholder={placeholder}
-            onChangeText={text => setText(text)}
-            defaultValue={text}
-            multiline={isMultiline}
-            textAlign='right'
-            style = {styles.input}       
-        />
     )
 }
     
 const styles = StyleSheet.create({
     container : {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-around',
         padding: 0,
         color: '#EEEEEE',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        flex: 1
     },
     input : {
         borderColor: 'black',
@@ -54,5 +49,11 @@ const styles = StyleSheet.create({
         fontWeight: '700',
         textAlign: 'center',
         margin: 0,
+    },
+    result : {
+        fontSize: 25,
+        color: '#17104a',
+        marginHorizontal: '5%',
+        marginVertical: '7%',       
     }
 });

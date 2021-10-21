@@ -1,24 +1,31 @@
 import React from 'react'
 import { TouchableOpacity, StyleSheet, View } from 'react-native'
+import { Ionicons } from '@expo/vector-icons';
+import { useSelector, useDispatch } from 'react-redux'
 
-export default function ButtonStyled( { children, onPressFunc, enabled } ) {
-    const BORDERCOLOR = enabled ? '#1a0d91' : 'gray'
+export default function ButtonStyled( { onPressFunc, iconName, iconSize, enabled, size = 40 } ) {
+    const COLOR = enabled ? '#1a0d91' : 'gray'
     return (
         <>
             <TouchableOpacity 
                 onPress={ () => { if (enabled == true) { onPressFunc() }}}
-                style={styles(BORDERCOLOR).button}
+                style={styles(COLOR, size).button}
             >
-                {children}
+                <Ionicons 
+                    name={iconName}
+                    size={iconSize}
+                    color={COLOR}
+                />
             </TouchableOpacity>
         </>
     )
 }
-const styles = (props) => StyleSheet.create({
+
+const styles = (borderClr, size) => StyleSheet.create({
     button:{
-        width: 40,
-        height: 40,
-        borderColor: props,
+        width: size,
+        height: size,
+        borderColor: borderClr,
         borderRadius: 5,
         borderWidth: 2,
         borderStyle: 'solid',
