@@ -8,9 +8,11 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-native-clipboard/clipboard": "^1.9.0",
     "@react-native-community/clipboard": "^1.5.1",
     "expo": "~42.0.1",
     "expo-cli": "^4.12.7",
+    "expo-clipboard": "~1.1.0",
     "expo-crypto": "^9.2.0",
     "expo-status-bar": "~1.0.4",
     "nord": "^0.2.1",
@@ -27,6 +29,11 @@
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"
+  },
+  "rnpm": {
+    "assets": [
+      "./assets/fonts/"
+    ]
   },
   "private": true
 }

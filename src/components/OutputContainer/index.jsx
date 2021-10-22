@@ -16,7 +16,6 @@ export default function OutputContainer() {
                         selectable={true}
                         numberOfLines={0}
                         ellipsizeMode='clip'
-                        //onLongPress={() => Clipboard.setString(result)}
                     >
                         {result}
                     </Text>

@@ -18,8 +18,8 @@ export default function Input({ placeholder }) {
                     dispatch(enableButton(true))
                 else { dispatch(enableButton(false)) }		
 			}}
-            secureTextEntry={true}
-			defaultValue={text}          
+            keyboardType='default'
+            defaultValue={text}          
 			textAlign='right'
 			style = {styles.input}       
 		/>

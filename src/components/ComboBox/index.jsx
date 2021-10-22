@@ -21,11 +21,11 @@ export default function Combobox () {
 
     const DATA = [
         {
-          title: 'Decodables',
+          title: 'Decodables:',
           data: ['BASE64', 'HEX']
         },
         {
-          title: 'Undecodables',
+          title: 'Undecodables:',
           data: ['SHA1', 'SHA256', 'SHA384', 'SHA512']
         }
       ];
@@ -51,22 +51,22 @@ export default function Combobox () {
 
 const styles = StyleSheet.create({
     item: {
-        backgroundColor: '#5E81AC',
-        padding: 5,
-        marginVertical: 1,
-        height: 30,
-		width: '100%',
+      backgroundColor: '#5E81AC',
+      marginVertical: 1,
+      height: 50,
+		  width: '100%',
+      justifyContent: 'center',
     },
     header: {
       fontSize: 20,
       backgroundColor: '#81A1C1',
-      paddingLeft: 20,
       fontWeight: "700",
-      color: '#ECEFF4'
+      color: '#ECEFF4',
+      textAlign: 'center',
     },
     title: {
-      fontSize: 16,
-      paddingLeft: 20,
+      fontSize: 20,
       color: '#FFFFFF',
+      alignSelf: 'center'
     },
 });

@@ -27,3 +27,9 @@ export const setOutput = (output) => {
         payload: output
     }
 }
+export const setCopySize = (value) => {
+    return {
+        type: 'SET_COPYSIZE',
+        payload: value
+    }
+}

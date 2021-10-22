@@ -33,7 +33,7 @@ const styles = (props) => StyleSheet.create({
         minHeight: props,
     },
     text: {
-        fontSize: 32,
+        fontSize: 30,
         color: 'white',
         textAlign: 'center',
         paddingTop: 10,
