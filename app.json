@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "pwd_maker",
-    "slug": "pwd_maker",
-    "version": "1.0.0",
+    "name": "Password Maker",
+    "slug": "pwd-maker",
+    "version": "1.8.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/peepoHsplash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#81A1C1"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -20,13 +20,12 @@
       "supportsTablet": true
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+      "icon": "./assets/icon.png",
+      "package": "com.tiago18555.pwdmaker"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": ""
   }
 }

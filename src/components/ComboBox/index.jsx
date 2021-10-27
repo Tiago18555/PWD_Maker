@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, TouchableOpacity, Text, SectionList, StyleSheet } from 'react-native'
-import { setEncodingType, toggleShowList, enableButton } from "../../store/shared/shared.actions";
-import { useDispatch } from "react-redux";
+import { setEncodingType, toggleShowList } from "../../store/shared/shared.actions"
+import { useDispatch } from "react-redux"
 
 export default function Combobox () {
 

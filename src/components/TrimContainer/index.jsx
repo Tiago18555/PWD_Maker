@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TextInput } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 import { RadioButton } from 'react-native-paper'
 import * as Clipboard from 'expo-clipboard'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import ButtonStyled from '../ButtonStyled'
 import { setCopySize } from '../../store/shared/shared.actions'
@@ -21,7 +22,11 @@ export default function TrimContainer() {
                     style={styles.input}
                     keyboardType='number-pad'
 					maxLength={2}
-                    onChangeText={text => dispatch(setCopySize(text))}
+                    onChangeText={async (text) => {
+                        dispatch(setCopySize(text))
+                        await AsyncStorage.setItem('copysize', text)
+                    }}
+                    defaultValue={String(data.copysize)}
                 />
             <View style={styles.rbContainer}>
                 <Text style={styles.label}>First</Text>

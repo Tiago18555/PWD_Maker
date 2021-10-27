@@ -1,5 +1,3 @@
-'use strict'
-
 import * as Crypto from 'expo-crypto';
 import { Buffer } from "buffer"
 
@@ -35,25 +33,11 @@ export default async function encrypt(input, type) {
       
         return result
     }
-      
-    const hexDecode = (params) => {
-        var j;
-        var hexes = params.match(/.{1,4}/g) || [];
-        var back = "";
-        for(j = 0; j<hexes.length; j++) {
-            back += String.fromCharCode(parseInt(hexes[j], 16));
-        }
-      
-      return back;
-    }
 
-    if(type === 'BASE64') {
-        let buf = Buffer.from(input)
-        return buf.toString('base64')
-    }
-    else if (type === 'HEX') {
+    if(type === 'BASE64')
+        return Buffer.from(input).toString('base64')
+    else if (type === 'HEX')
         return hexEncode(keyword)
-    }
     else {
         switch(type) {
             case 'SHA1':

@@ -1,7 +1,6 @@
 import React from 'react'
-import { TouchableOpacity, StyleSheet, View } from 'react-native'
+import { TouchableOpacity, StyleSheet } from 'react-native'
 import { Ionicons } from '@expo/vector-icons';
-import { useSelector, useDispatch } from 'react-redux'
 
 export default function ButtonStyled( { onPressFunc, iconName, iconSize, enabled, size = 40 } ) {
     const COLOR = enabled ? '#1a0d91' : 'gray'

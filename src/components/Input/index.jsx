@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { TextInput, StyleSheet } from 'react-native'
 import { enableButton, setInput } from '../../store/shared/shared.actions'
 import { useDispatch, useSelector } from 'react-redux'

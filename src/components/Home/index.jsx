@@ -1,10 +1,35 @@
-import React from "react"
-import InputContainer from "../InputContainer"
+import React, { useEffect } from "react"
 import { Text, View, SafeAreaView, StyleSheet, Dimensions } from "react-native"
+import { useDispatch, useSelector } from "react-redux"
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+import InputContainer from "../InputContainer"
 import OutputContainer from "../OutputContainer"
+import { setCopySize } from '../../store/shared/shared.actions'
 
 export default function Home(){
     const ScreenHeight = Dimensions.get("window").height;
+    const copysize = useSelector(state => state.data.copysize)
+    const dispatch = useDispatch()
+
+    useEffect(() =>  {
+        ( async () => {
+            try {
+              const data = await AsyncStorage.getItem('copysize')
+              if (data !== null) {
+                dispatch(setCopySize(Number(data)))
+                console.log(
+                    `COPYSIZE: ${copysize},
+                    DATA: ${data}`
+                )
+              }
+            }
+            catch(err) {
+              alert(err)
+              console.log(err)
+            }
+          })()
+    }, [copysize])
 
     return(
         <>
